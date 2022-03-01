@@ -25,12 +25,12 @@ def download(num):
         data = fp.write(pic_url + "\n")
         pic_filename = str(pic_pid) + "_" + pic_title + \
             "_" + pic_author + ".png"
-        img_data=requests.get(url=pic_url,headers=headers).content
-        #print(no_title_data)
+#         img_data=requests.get(url=pic_url,headers=headers).content
+#         #print(no_title_data)
 
-        with open('pic/'+pic_filename,mode='wb')as f:
-                f.write(img_data)
-                print(pic_filename,":保存完成")
+#         with open('pic/'+pic_filename,mode='wb')as f:
+#                 f.write(img_data)
+#                 print(pic_filename,":保存完成")
         time.sleep(1)
 
 
@@ -75,5 +75,5 @@ for filename in os.listdir(pic_path):
     if (download_num > 10):
         time.sleep(3)
 
-del_file(r'pic/')
-os.rmdir(r'pic/')
+# del_file(r'pic/')
+# os.rmdir(r'pic/')
