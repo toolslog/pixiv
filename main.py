@@ -6,7 +6,7 @@ import os
 import json
 
 url = 'https://api.lolicon.app/setu/v2'
-download_num = 37058
+download_num = 45000
 
 headers={
 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'
@@ -20,7 +20,7 @@ def download(num):
         pic_url = dic["data"][0]["urls"]["original"]
         pic_pid = dic["data"][0]["pid"]
         pic_author = dic["data"][0]["author"]
-        fp = open("pic_url.txt", 'a')
+        fp = open("all_url.txt", 'a')
         # pic_url = res['data']['url']
         print(pic_url)
         data = fp.write(pic_url + "\n")
@@ -69,12 +69,12 @@ else:
 
 download(download_num)
 
-pic_path = r'pic/'
-pic_name = os.listdir(pic_path)
-for filename in os.listdir(pic_path):
-    # upload_image(pic_path + filename)
-    if (download_num > 10):
-        time.sleep(3)
+# pic_path = r'pic/'
+# pic_name = os.listdir(pic_path)
+# for filename in os.listdir(pic_path):
+#     # upload_image(pic_path + filename)
+#     if (download_num > 10):
+#         time.sleep(3)
 
 # del_file(r'pic/')
 # os.rmdir(r'pic/')
